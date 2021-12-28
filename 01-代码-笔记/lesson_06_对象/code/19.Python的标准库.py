@@ -28,7 +28,7 @@ import pprint
 # 'C:\\dev\\python\\python36\\lib',
 # 'C:\\dev\\python\\python36',
 # 'C:\\dev\\python\\python36\\lib\\site-packages']
-# pprint.pprint(sys.path)
+pprint.pprint(sys.path)
 
 # sys.platform
 # 表示当前Python运行的平台

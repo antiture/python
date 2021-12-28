@@ -1,8 +1,8 @@
 a = int(10) # 创建一个int类的实例
 b = str('hello') # 创建一个str类的实例
 
-# print(a , type(a))
-# print(b , type(b))
+print(a , type(a))
+print(b , type(b))
 
 # 定义一个简单的类
 # 使用class关键字来定义类，语法和函数很像！
@@ -12,7 +12,7 @@ b = str('hello') # 创建一个str类的实例
 class MyClass():
     pass
 
-# print(MyClass)
+print(MyClass)
 # 使用MyClass创建一个对象
 # 使用类来创建对象，就像调用一个函数一样
 mc = MyClass() # mc就是通过MyClass创建的对象，mc是MyClass的实例
@@ -24,8 +24,8 @@ mc_4 = MyClass()
 result = isinstance(mc_2,MyClass)
 result = isinstance(mc_2,str)
 
-# print(mc , type(mc))
-# print('result =',result)
+print(mc , type(mc))
+print('result =',result)
 
 # print(id(MyClass) , type(MyClass))
 

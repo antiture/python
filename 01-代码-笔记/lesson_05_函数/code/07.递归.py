@@ -31,7 +31,7 @@ def factorial(n):
     return result    
 
 # 求10的阶乘    
-# print(factorial(20))
+print(factorial(20))
 
 # 递归式的函数
 # 从前有座山，山里有座庙，庙里有个老和尚讲故事，讲的什么故事呢？
