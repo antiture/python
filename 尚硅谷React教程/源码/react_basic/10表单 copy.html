@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>10表单</title>
+	<!-- 引入react核心库 -->
+	<script type="text/javascript" src="js/react.development.js"></script>
+	<script type="text/javascript" src="js/react-dom.development.js"></script>
+	<script type="text/javascript" src="js/babel.min.js"></script>
+	<script type="text/javascript" src="js/prop-types.js"></script>
+</head>
+
+<body>
+
+	<div>
+		<h1>非受控组件</h1>
+		<div>不推荐 过多ref</div>
+		<div id="test"></div>
+	</div>
+
+	<div>
+		<h1>受控组件</h1>
+		<div>通过状态 在component查看 推荐</div>
+		<div id="test1"></div>
+	</div>
+
+	<script type="text/babel">
+
+		class LoginSansControle extends React.Component {
+			render() {
+				return (
+					<div>
+						<form action="http://xiz.fr/" onSubmit={this.handleSubmit}>
+							用户名：<input ref={c => this.username = c} type="text" name="username" />
+							密码：<input ref={c => this.password = c} type="password" name="password" />
+							<button>登录</button>
+						</form>
+					</div>
+				)
+			}
+
+			handleSubmit = (event) => {
+				event.preventDefault()  //阻止表单提交
+				const {
+					username,
+					password
+				} = this
+				alert(`username: ${username.value}; password: ${password.value}`)
+
+			}
+		}
+		ReactDOM.render(<LoginSansControle />, document.getElementById("test"))
+
+
+		class LoginControle extends React.Component {
+			render() {
+				return (
+					<div>
+						<form action="http://xiz.fr/" onSubmit={this.handleSubmit}>
+							用户名：<input onChange={this.changeName} type="text" name="username" />
+							密码：<input onChange={this.changePassword} type="password" name="password" />
+							<button>登录</button>
+						</form>
+					</div>
+				)
+			} 
+			//initializer state
+			state = {
+				username: "",
+				password: "",
+			}
+			//function 
+			changeName = (event) => {
+				this.setState({ username: event.target.value })
+			}
+			changePassword = (event) => {
+				this.setState({ password: event.target.value })
+			}
+			handleSubmit = (event) => {
+				event.preventDefault()
+				const{ username, password} = this.state //取state的值
+				alert(`你输入的用户名是:${username},你输入的密码是:${password}`)
+	
+			}
+		}
+		ReactDOM.render(<LoginControle />, document.getElementById("test1"))
+
+	</script>
+</body>
+
+</html>

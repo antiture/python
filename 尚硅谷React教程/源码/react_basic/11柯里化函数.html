@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>11柯里化</title>
+	<!-- 引入react核心库 -->
+	<script type="text/javascript" src="js/react.development.js"></script>
+	<script type="text/javascript" src="js/react-dom.development.js"></script>
+	<script type="text/javascript" src="js/babel.min.js"></script>
+	<script type="text/javascript" src="js/prop-types.js"></script>
+</head>
+
+<body>
+
+	<div>
+		<h1>高阶函数与柯里化</h1>
+		<div>柯里化: 函数分层接收 param, 在最底层统一处理 </div>
+		<div id="test"></div>
+	</div>
+	<div>
+		<h1>非柯里化处理</h1>
+		<div></div>
+		<div id="test1"></div>
+	</div>
+ 
+
+	<script type="text/babel"> 
+        
+		class LoginControleCurry extends React.Component {
+			render() {
+				return (
+					<div>
+						<form action="http://xiz.fr/" onSubmit={this.handleSubmit}>
+							用户名：<input onChange={this.saveFormData("username")} type="text" name="username" />
+							密码：<input onChange={this.saveFormData("password")} type="password" name="password" />
+							<button>登录</button>
+						</form>
+					</div>
+				)
+			} 
+			//initializer state
+			state = {
+				username: "",
+				password: "",
+			}
+			//function 
+			saveFormData = (dataType) => {
+				return (event) => {                  // 包装成function 返回给 onChange this.saveFormData("username") 注意区别 this.saveFormData
+					console.log( dataType, event.target.value)
+					this.setState({[dataType]: event.target.value})  //注意。 [dataType]
+				}
+				
+			} 
+			handleSubmit = (event) => {
+				event.preventDefault()
+				const{ username, password} = this.state //取state的值
+				alert(`你输入的用户名是:${username},你输入的密码是:${password}`)
+	
+			}
+		}
+		ReactDOM.render(<LoginControleCurry />, document.getElementById("test"))
+
+
+		class LoginControleNonCurry extends React.Component {
+			render() {
+				return (
+					<div>
+						<form action="http://xiz.fr/" onSubmit={this.handleSubmit}>
+							用户名：<input onChange={event => this.saveFormData("username", event)} type="text" name="username" /> {/* 包装成匿名函数并传递event */}
+							密码：<input onChange={event => this.saveFormData("password", event)} type="password" name="password" />
+							<button>登录</button>
+						</form>
+					</div>
+				)
+			} 
+			//initializer state
+			state = {
+				username: "",
+				password: "",
+			}
+			//function 
+			saveFormData = (dataType, event) => {      
+					console.log( dataType, event.target.value)
+					this.setState({[dataType]: event.target.value}) 
+				
+			} 
+			handleSubmit = (event) => {
+				event.preventDefault()
+				const{ username, password} = this.state //取state的值
+				alert(`你输入的用户名是:${username},你输入的密码是:${password}`)
+	
+			}
+		}
+		ReactDOM.render(<LoginControleNonCurry />, document.getElementById("test1"))
+
+	</script>
+</body>
+
+</html>

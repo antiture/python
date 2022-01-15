@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>12组件生命周期</title>
+	<!-- 引入react核心库 -->
+	<script type="text/javascript" src="js/react.development.js"></script>
+	<script type="text/javascript" src="js/react-dom.development.js"></script>
+	<script type="text/javascript" src="js/babel.min.js"></script>
+	<script type="text/javascript" src="js/prop-types.js"></script>
+</head>
+
+<body>
+
+	<div>
+		<h1>生命周期</h1>
+		<div>  </div>
+		<div id="test"></div>
+	</div>
+	<div>
+		<h1> </h1>
+		<div></div>
+		<div id="test1"></div>
+	</div>
+ 
+
+	<script type="text/babel"> 
+        
+		class Live extends React.Component {
+			//render
+			render() {
+				return (
+					<div>
+						<h2 style={{opacity: this.state.opacity}}>React</h2>
+						<button onClick={ this.hiddenReact} ref={this.myRef}>button</button>
+					</div>
+				)
+			} 
+			//state 
+			state = {
+				opacity:1,
+			}
+			//refs
+			myRef = React.createRef() 
+			// function
+			hiddenReact = () => {
+				ReactDOM.unmountComponentAtNode(document.getElementById("test")) 
+			} 
+		    // onload
+			componentDidMount(){
+				console.log('onload');
+				this.timer = setInterval(() => {
+					let {opacity} = this.state
+					opacity -= 0.01
+					if(opacity <= 0) opacity = 1
+					this.setState({opacity: opacity})  
+					
+				}, 20);
+			}
+		    // dying
+			componentWillUnmount(){
+				console.log('dying');
+				clearInterval(this.timer)
+			}
+
+		}
+		ReactDOM.render(<Live />, document.getElementById("test"))
+
+ 
+
+	</script>
+</body>
+
+</html>
