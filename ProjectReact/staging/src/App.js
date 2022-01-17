@@ -1,3 +1,6 @@
+// App.js  组件首字母大写
+
+
 import logo from './logo.svg'; //图片作为模块引入
 import './App.css';
 
