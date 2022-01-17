@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './logo.svg'; //图片作为模块引入
 import './App.css';
 
 function App() {
