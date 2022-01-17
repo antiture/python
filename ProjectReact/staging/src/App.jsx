@@ -1,5 +1,5 @@
 import React, { Component } from "react";  
-import "./App.sass" 
+import "./App.scss" 
 import ToDoList from "./components/screens/ToDoList";
 import Header from "./components/blocks/Header";
 import Button from "./components/elements/Button";

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import "./index.sass"
+import "./index.scss"
 import Header from './Header'
 import List from "./List";
 
