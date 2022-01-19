@@ -7,4 +7,18 @@
     top: 0px;
     left: 0px;
     padding: 8px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    
+    .ant-breadcrumb-link{
+        color: $v-fond-background; 
+    }
+    .ant-breadcrumb a{
+        color: $v-fond-background;
+    }
+    .ant-breadcrumb-separator{
+        color: $v-fond-background;
+        
+    }
 }

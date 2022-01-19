@@ -1,33 +1,40 @@
 import React from "react"
 import "./index.scss"
-import TabsControl from "../../outils/TabsControl"
+import CtrlTabs from "../../controls/CtrlTabs"
 
-export default class Navigation extends React.Component{
-    render(  ){
-        return(
+import Page1 from "../../screens/Page1";
+import Page2 from "../../screens/Page2";
+import Page3 from "../../screens/Page3";
+import Page4 from "../../screens/Page4";
+import Page5 from "../../screens/Page5";
+import Page6 from "../../screens/Page6";
+
+
+export default class Navigation extends React.Component {
+    render() {
+        return (
             <div className="Navigation">
-                <TabsControl>
-                    <div name = "first">
-                        第一帧
+                <CtrlTabs>
+                    <div name="first" className="ctn-main">
+                        <Page1 />
                     </div>
-                    <div name = "second">
-                        第二帧
+                    <div name="second" className="ctn-main">
+                        <Page2 />
                     </div>
-                    <div name = "third">
-                        第三帧
+                    <div name="third" className="ctn-main">
+                        <Page3 />
                     </div>
-                    <div name = "third">
-                        第三帧
+                    <div name="third" className="ctn-main">
+                        <Page4 />
                     </div>
-                    <div name = "third">
-                        第三帧
+                    <div name="third" className="ctn-main">
+                        <Page5 />
                     </div>
-                    <div name = "third">
-                        第三帧
+                    <div name="name" className="ctn-main">
+                        <Page6 />
                     </div>
-                </TabsControl>
+                </CtrlTabs>
             </div>
         )
     }
 }
- 
