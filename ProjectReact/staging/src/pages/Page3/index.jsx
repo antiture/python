@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./index.scss"
 import 'antd/dist/antd.min.css';
-import { DatePicker, Space } from 'antd';
+import { DatePicker } from 'antd';
 import { Switch, Button } from 'antd';
 
 export default class Page3 extends Component {
