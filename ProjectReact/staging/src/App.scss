@@ -17,6 +17,9 @@
             margin-right: 10px;
             color: $v-text-verso-sec;
         }
+        .link.active{ 
+            color: $v-hover;
+        }
     }
     .ctn-page{
         padding-top: 60px;

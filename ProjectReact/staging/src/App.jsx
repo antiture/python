@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.scss"
-import { Link, Route, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
 import Page3 from './pages/Page3';
@@ -18,12 +18,12 @@ export default class App extends Component {
                 <div className="logo">
                     SOFTLAW
                 </div>
-                    <Link className="link" to="/Page1">Page1</Link>
-                    <Link className="link" to="/Page2">Page2</Link>
-                    <Link className="link" to="/Page3">Page3</Link>
-                    <Link className="link" to="/Page4">Page4</Link>
-                    <Link className="link" to="/Page5">Page5</Link>
-                    <Link className="link" to="/Page6">Page6</Link>
+                    <NavLink exact className="link" to="/Page1">Page1</NavLink>
+                    <NavLink className="link" to="/Page2">Page2</NavLink>
+                    <NavLink className="link" to="/Page3">Page3</NavLink>
+                    <NavLink className="link" to="/Page4">Page4</NavLink>
+                    <NavLink className="link" to="/Page5">Page5</NavLink>
+                    <NavLink className="link" to="/Page6">Page6</NavLink>
                 </div> 
                 <div className="ctn-page">
                     <Routes>

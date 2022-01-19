@@ -1,3 +1,6 @@
+/// 路由组件没有props
+
+
 import React, { Component } from "react";
 import "./index.scss"
 import { Button, Tooltip } from 'antd';
