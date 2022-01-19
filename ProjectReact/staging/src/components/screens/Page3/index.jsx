@@ -27,5 +27,6 @@ export default class Page3 extends Component {
     };
 }
 
+
 const { RangePicker } = DatePicker;
 
