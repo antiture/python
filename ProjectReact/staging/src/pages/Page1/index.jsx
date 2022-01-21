@@ -3,71 +3,32 @@
 
 import React, { Component } from "react";
 import "./index.scss"
-import { Button, Tooltip } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
+import MyNavLink from '../../components/blocks/MyNavLink';
+import { Route, Routes } from 'react-router-dom';
 import 'antd/dist/antd.min.css';
+import SousPage1 from './SousPage1';
+import SousPage2 from './SousPage2';
+import SousPage3 from './SousPage3';
 
 export default class Page1 extends Component {
     render() {
         return (
             <div className="Page1">
-                <Tooltip title="search">
-                    <Button type="primary" shape="circle" icon={<SearchOutlined />} />
-                </Tooltip>
-                <Button type="primary" shape="circle">
-                    A
-                </Button>
-                <Button type="primary" icon={<SearchOutlined />}>
-                    Search
-                </Button>
-                <Tooltip title="search">
-                    <Button shape="circle" icon={<SearchOutlined />} />
-                </Tooltip>
-                <Button icon={<SearchOutlined />}>Search</Button>
-                <br />
-                <Tooltip title="search">
-                    <Button shape="circle" icon={<SearchOutlined />} />
-                </Tooltip>
-                <Button icon={<SearchOutlined />}>Search</Button>
-                <Tooltip title="search">
-                    <Button type="dashed" shape="circle" icon={<SearchOutlined />} />
-                </Tooltip>
-                <Button type="dashed" icon={<SearchOutlined />}>
-                    Search
-                </Button>
-                <Button icon={<SearchOutlined />} href="https://www.google.com" />
-                <br />
-                <br />
-                <Tooltip title="search">
-                    <Button type="primary" shape="circle" icon={<SearchOutlined />} size="large" />
-                </Tooltip>
-                <Button type="primary" shape="circle" size="large">
-                    A
-                </Button>
-                <Button type="primary" icon={<SearchOutlined />} size="large">
-                    Search
-                </Button>
-                <Tooltip title="search">
-                    <Button shape="circle" icon={<SearchOutlined />} size="large" />
-                </Tooltip>
-                <Button icon={<SearchOutlined />} size="large">
-                    Search
-                </Button>
-                <br />
-                <Tooltip title="search">
-                    <Button shape="circle" icon={<SearchOutlined />} size="large" />
-                </Tooltip>
-                <Button icon={<SearchOutlined />} size="large">
-                    Search
-                </Button>
-                <Tooltip title="search">
-                    <Button type="dashed" shape="circle" icon={<SearchOutlined />} size="large" />
-                </Tooltip>
-                <Button type="dashed" icon={<SearchOutlined />} size="large">
-                    Search
-                </Button>
-
+                <div className="ctn-sous-link"> 
+                    <MyNavLink to="/Page1/SousPage1">SousPage1</MyNavLink>
+                    <MyNavLink to="/Page1/SousPage2">SousPage2</MyNavLink>
+                    <MyNavLink to="/Page1/SousPage3">SousPage3</MyNavLink>
+                </div>
+                <div className="ctn-page">
+                    {/* 注册路由 */}
+                    <Routes>
+                        <Route path="/SousPage1" element={<SousPage1 />} />
+                        <Route path="/SousPage2" element={<SousPage2 />} />
+                        <Route path="/SousPage3" element={<SousPage3 />} />
+                    </Routes>
+                </div>
             </div>
+
         )
     }
 

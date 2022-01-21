@@ -24,8 +24,19 @@
     .ctn-page{
         padding-top: 60px;
         padding: 40px;
-        
+    }
+    .div-permanent{
+        width: 100px;
+        height: 200px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: $clr-main;
+        .video-demo{
+            width: 100px;
+            height: 200px;
 
+        }
     }
 }
     
